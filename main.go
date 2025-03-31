@@ -4,7 +4,6 @@ import (
     "fmt"
     "log"
     "net/http"
-
     "github.com/gin-gonic/gin"
     "github.com/joho/godotenv"
 )
@@ -36,7 +35,7 @@ func main() {
 
         }
 		//Query to get users
-        rows, err := db.Query("SELECT userID, username, email FROM users")
+        rows, err := db.Query("SELECT userID, username, email FROM user")
         if err != nil {
             c.JSON(http.StatusInternalServerError, gin.H{"error": fmt.Sprintf("DB query failed: %v", err)})
             return
